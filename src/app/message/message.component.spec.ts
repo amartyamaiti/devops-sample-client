@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MessageComponent } from './message.component';
 
@@ -8,7 +9,10 @@ describe('MessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MessageComponent ]
+      declarations: [ MessageComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   });

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DeashboardComponent } from './deashboard.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DeasshboardComponent', () => {
   let component: DeashboardComponent;
@@ -8,7 +9,11 @@ describe('DeasshboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeashboardComponent ]
+      imports:[RouterTestingModule],
+      declarations: [ DeashboardComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   });

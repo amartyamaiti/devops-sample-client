@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { LoginComponent } from './login.component';
-import { validUser, blankUser } from 'src';
 const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
 const loginServiceSpy = jasmine.createSpyObj('LoginService', ['login']);
 
@@ -14,7 +14,10 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   });

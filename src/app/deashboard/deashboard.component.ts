@@ -11,7 +11,7 @@ export class DeashboardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-      if(history.state.user_name){
+      if(history && history.state && history.state.user_name){
       this.user_name = history.state.user_name;
       }else{
         this.router.navigate(["/login"]);
