@@ -7,5 +7,10 @@ pipeline{
                 sh "npm run build"
             }
         }
+        stage("Unit test"){
+            steps{
+                sh "npm run test"
+            }
+        }
     }
 }
