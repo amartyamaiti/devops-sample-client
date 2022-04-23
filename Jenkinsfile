@@ -23,7 +23,7 @@ pipeline{
         }
         stage("Image build"){
             steps{
-                sh "docker build -t devops-client-image"
+                sh "docker build -t devops-client-image ."
             }
         }
         stage("Remove old container"){
