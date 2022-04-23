@@ -13,7 +13,7 @@ pipeline{
                 //sh "npm run test"
             }
         }
-        stage("verify tools"){
+        stage("Verify tools"){
             steps{
                 sh '''
                 docker version
@@ -21,7 +21,14 @@ pipeline{
                 '''
             }
         }
-        stage("Remove old docker data"){
+        stage("Image build"){
+            steps{
+                //remove old image
+                sh "docker image rm devops-client-image"
+                sh "docker build -t devops-client-image"
+            }
+        }
+        stage("Remove old container"){
             steps{
                 sh 'docker compose down --rmi local --volumes'
             }
@@ -32,7 +39,7 @@ pipeline{
                 sh 'docker compose ps'
             }
         }
-        stage("SonarQube analysis devops-client"){
+        stage("SonarQube analysis"){
             steps{
                 script{
                     def scannerHome= tool 'SonarQubeScan';
