@@ -9,6 +9,7 @@ pipeline{
         }
         stage("Unit test"){
             steps{
+                sh "echo 'Todo unit test'"
                 //sh "npm run test"
             }
         }
