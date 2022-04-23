@@ -1,0 +1,8 @@
+version: '3'
+services:
+  devops-client:
+      build:
+        context: ./client/angular-app
+      ports:
+        - "4200:4200"
+      container_name: devops-client
