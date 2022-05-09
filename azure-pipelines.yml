@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: devops-sample
+  name: default
 
 steps:
 - task: NodeTool@0
